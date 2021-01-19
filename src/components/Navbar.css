@@ -1,0 +1,15 @@
+.nav-item{
+    
+    
+    list-style: none;
+    text-decoration: none;
+}
+
+.nav-links{
+    text-decoration: none !important;
+    
+}
+
+.bg-nav{
+    background-color: #5085bd; 
+}

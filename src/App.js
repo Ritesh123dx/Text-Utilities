@@ -1,25 +1,48 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
-function App() {
+import 'bootstrap/dist/css/bootstrap.css';
+import Navbar from './components/Navbar';
+import OCR from './OCR';
+import TTS from './TTS';
+import TextAnalyzer from './TextAnalyzer';
+
+
+function App(props) {
+  console.log(props)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <React.Fragment>
+        <Router>
+          <Navbar />
+
+
+          <div className="container border shadow pb-5" style={{ marginTop : '120px'}}>
+            <div className="row">
+              {/* <div className="col-3" style={{ paddingLeft: '0px' }}>
+                <Navbar />
+              </div> */}
+              <div className="col-12">
+
+                <Switch>
+                  <Route path="/ocr" exact component={OCR} />
+                  <Route path="/tts" component={TTS} />
+                  <Route path="/textAnalyzer" component={TextAnalyzer} />
+                  <Route path="/" component={OCR} />
+                </Switch>
+              </div>
+            </div>
+          </div>
+
+
+        </Router>
+      </React.Fragment>
+    </>
   );
 }
+
+
 
 export default App;
