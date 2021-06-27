@@ -42,7 +42,7 @@ function TTS() {
         }
         // speech.lang = 'en-US';
         speech.voice = voiceList.find(element => element.lang === 'en-GB');
-        console.log("VOICE used ---> ", speech.voice);
+        console.log("VOICE used  ---> ", speech.voice);
         speech.text = textData;
         speech.volume = 1;
         speech.rate = 1;
